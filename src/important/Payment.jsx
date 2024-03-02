@@ -14,6 +14,7 @@ const PaymentForm = () => {
   const [paymentError, setPaymentError] = useState(null);
   const [complete,setComplet] = useState(false)
  const Navigate = useNavigate()
+ const token = sessionStorage.getItem('refresh_token')
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -33,7 +34,7 @@ const PaymentForm = () => {
 
       if (error) throw new Error(error.message);
 
-      const response = await axios.post(`${baseUrl}/checkOut/payment`,{
+      const response = await axios.post(`${baseUrl}/checkOut/payment?token=${token}`,{
         paymentMethod:paymentMethod.id,
         items:cartItemsNames
       },{

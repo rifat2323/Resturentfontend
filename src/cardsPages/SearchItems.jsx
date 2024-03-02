@@ -10,11 +10,11 @@ const SearchItems = () => {
   const baseUrl = import.meta.env.VITE_BASE_URL
   const {foodItems,setShortBy} = useContext(DataProvider)
   const Navigate = useNavigate()
-
+  const token = sessionStorage.getItem('refresh_token')
   const handelAddedTocart = async(id)=>{
 
     try{
-      const {data} = await axios.post(`${baseUrl}/cart/addItem`,{
+      const {data} = await axios.post(`${baseUrl}/cart/addItem?token=${token}`,{
         id:id
        },{
         withCredentials:true

@@ -32,9 +32,11 @@ const NavBar = () => {
       setIsCloseClick(true)
     }
   },[screenSize])
+  const token = sessionStorage.getItem('refresh_token')
+
   const handelLogOut = async ()=>{
      try{
-      const {data} = await axios.get(`${BaseURl}/user/logout`,{
+      const {data} = await axios.get(`${BaseURl}/user/logout?token=${token}`,{
         withCredentials:true
       })
        if(data.logOut ===321){

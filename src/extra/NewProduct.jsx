@@ -11,6 +11,7 @@ const NewProduct = () => {
     const [isProcessing,setIsProcessing] = useState(false)
     const [name,setName] = useState('')
     const [price,setPrice] = useState(Number)
+    const token = sessionStorage.getItem('refresh_token')
  const formData = new FormData()
  formData.append('FoodName',name)
  formData.append('Price',parseInt(price))
@@ -19,7 +20,7 @@ const NewProduct = () => {
     if(isProcessing) return;
     setIsProcessing(true)
     try{
-        const data = await axios.post(`${baseUrl}/food`,formData,{
+        const data = await axios.post(`${baseUrl}/food?token=${token}`,formData,{
             withCredentials:true
         })
 

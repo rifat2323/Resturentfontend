@@ -7,10 +7,11 @@ const Order = () => {
    const  [noOrder,setNoOrder] = useState(false);
    console.log(orderDetalis)
   const baseUrl = import.meta.env.VITE_BASE_URL
+  const token = sessionStorage.getItem('refresh_token')
   useEffect(()=>{
     const fetchItem = async ()=>{
       try{
-        const {data} = await axios.get(`${baseUrl}/checkOut/userCheckout`,{
+        const {data} = await axios.get(`${baseUrl}/checkOut/userCheckout?token=${token}`,{
           withCredentials:true
          })
   /*    console.log(data)  */
