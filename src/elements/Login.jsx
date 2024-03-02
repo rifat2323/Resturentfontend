@@ -23,31 +23,27 @@ const Login = () => {
     password:password
   }
    
-   const handelLogin = async () => {
+ const handelLogin = async () => {
   if (isRemember) {
     localStorage.setItem('userInfo', JSON.stringify(user));
   }
-
   try {
     const response = await fetch(`${baseUrl}/user/signIn`, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      credentials: 'include',
       body: JSON.stringify(user),
-      credentials: 'include' // Equivalent to `withCredentials: true`
     });
-
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status} - ${response.statusText}`);
-    }
-
     const data = await response.json();
-
     sessionStorage.setItem('userMail', data.userMail);
-
     if (data.userMail && data.accessToken) {
       location.replace(homePage);
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.log(error);
   }
 };
 
