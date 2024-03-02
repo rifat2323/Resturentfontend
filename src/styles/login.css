@@ -1,0 +1,139 @@
+.login{
+    --offWhite: #F2F2F2;
+    --orange:#E6626A;
+    --darkOrange:#E4637A;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.seperateLogin{
+ 
+    display: flex;
+    height: 23em;
+    width: 750px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+.leftLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 50%;
+    height: 100%;
+   
+   
+}
+.leftLogin .header h2{
+    font-weight: 300;
+    font-size: 1.5em;
+}
+.inputs .email, .inputs .password{
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: first baseline;
+    width: 100%;
+}
+.inputs input[type="text"]{
+    width: 18em;
+    height: 3em;
+    outline: none;
+    border: none;
+    background: var(--offWhite);
+    color: var(--text);
+    border-radius: 3px;
+    font-family: sans-serif;
+    padding-inline-start: 5px;
+    transition: 200ms;
+    margin-bottom: 8px;
+}
+.inputs input[type="text"]:hover{
+    outline:  2px solid #200E3A ;
+}
+.inputs input[type="text"]:focus{
+    outline: 2px solid #B4D4FF;
+}
+.leftLogin button{
+    border: none;
+    width: 17em;
+    font-size: .9em;
+    height: 2.5em;
+    border-radius: 5px;
+    background: linear-gradient(120deg,var(--orange),var(--darkOrange) );cursor: pointer;
+}
+.leftLogin button:hover,.leftLogin button:focus{
+    background: linear-gradient(20deg,var(--orange),#FF9EAA );
+}
+.bottomPop{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: .9em;
+}
+  
+
+.rightLogin{
+    flex-basis: 50%;
+    height: 100%;
+    background: linear-gradient(80deg,var(--orange),var(--darkOrange) );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+.rightLogin h2{
+    font-weight: 400;
+    font-size: 2em;
+   
+}
+.rightLogin button{
+
+    outline: none;
+    width: 8em;
+    height: 2.5em;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1em;
+    cursor: pointer;
+   
+}
+.extra{
+    display: none;
+}
+@media (max-width:768px) {
+    .seperateLogin{
+        max-width: 350px;
+        box-shadow:  5px 5px 7px #dadada,
+        -5px -5px 7px #ffffff;
+    }
+    .inputs input[type="text"]{
+        max-width: 20em;
+    }
+    .rightLogin{
+        display: none;
+    }
+    .bottomPop p{
+        margin-left:5px;
+        font-size: .8em;
+    }
+    .extra{
+        display: block;
+        font-size: .8em;
+    }
+    .extra button{
+        background: #fff;
+        color: var(--text);
+        transition: 100ms;
+    }
+    .extra button:focus{
+        color: #fff;
+    }
+}

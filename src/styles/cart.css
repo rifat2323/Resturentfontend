@@ -1,0 +1,73 @@
+.cartwrapper{
+    display: flex;
+    width: 100%;
+    min-height: 100dvh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 5%;
+    margin-bottom: 20px;
+}
+.cartwrapper h1{
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 1.8em;
+    color: rgb(255, 72, 0);
+}
+.cartwrapper .cartItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cartwrapper .cartItem .cartSingaleItem{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+   /*  box-shadow:  5px 5px 10px #bebebe,
+    -5px -5px 10px #ffffff; */
+    box-shadow:  5px 5px 10px #c5c5c5,
+             -5px -5px 10px #fbfbfb;
+            
+    height: 90px;
+}
+.cartwrapper .cartItem .cartSingaleItem .imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartwrapper .cartItem .cartSingaleItem .imgs p{
+    color: #050203;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+.cartwrapper .cartItem .cartSingaleItem .detalis{
+    width: 40%;
+}
+.cartwrapper .cartItem .cartSingaleItem .deleteItems svg{
+    color: #f5465d;
+    cursor: pointer;
+}
+.cartwrapper hr{
+    width: 100%;
+    margin-top: 8px;
+}
+.total{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.total button{
+    border: none;
+    background: #f5465d;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms linear;
+}
+.total button:hover{
+    background: #1D2B53;
+}

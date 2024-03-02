@@ -1,0 +1,239 @@
+.searchPageWrapper{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3%;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+.searchPageWrapper::-webkit-scrollbar-thumb{
+    display: none;
+}
+.searchHeaderPage{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.searchHeaderPage input{
+    flex: 1 0 200px;
+    background:#F8F8F8;
+    color: var(--text);
+    font-size: .9em;
+    height: 3em;
+    border: 1px solid #ddd;
+    padding-inline-start: 5px;
+    border-radius: inherit;
+    box-shadow:  5px 5px 7px #dadada,
+    -5px -5px 7px #ffffff;
+}
+.searchHeaderPage input:focus{
+    outline: none;
+}
+.searchHeaderPage button{
+    background: rgba(255, 81, 0, 0.89);
+    border: none;
+    height: 3em;
+    font-size: .9em;
+   
+  width: 60px;
+  cursor: pointer;
+}
+.searchHeaderPage button:hover{
+    background: rgb(255, 60, 0);
+}
+
+/*  grid search items*/
+
+
+.smallWrapperSearch{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-row: 100%;
+}
+
+.CategoryItemSearch{
+    width: 100%;
+    height: 100%;
+    margin-top: 2em;
+}
+.CategoryItemSearch .categoryClickItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+.CategoryItemSearch .categoryClickItem button{
+    flex: 1 0 110px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid #cfcfcf;
+    height: 2.5em;
+    border-radius: 10px;
+    font-weight: 400;
+    transition: 300ms;
+    cursor: pointer;
+}
+.CategoryItemSearch .categoryClickItem button.active{
+    
+    
+    border: 1px solid rgb(238, 240, 237);
+    box-shadow: 0px 5px 9px -8px rgba(0,0,0,0.7),0px -5px 9px -8px rgba(0,0,0,0.7);
+
+    outline: 2px solid #222;
+    color: var(--text);
+}
+.cardSearchItem{
+    margin-top: 2em;
+    width: 100%;
+    position: relative;
+}
+.cardItemSelect{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.cardItemSelect h4{
+    font-weight: 400;
+    color: rgb(245, 95, 9);
+}
+.cardItemSelect select{
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid #222;
+  width: 10em;
+  height: 2.9em;
+  font-weight: 400;
+  border-radius: 5px;
+  padding-inline-start: 15px;
+  transition: 300ms;
+}
+.cardItemSelect select option{
+    font-size: 1em;
+    padding-inline-start: 5px;
+   
+    border-radius: 8px;
+ 
+}
+
+
+.foodItemsCard{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5% 3%;
+    max-height: 80vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-color: none;
+    scrollbar-width: none;
+    gap: 10px;
+  
+}
+.foodItemsCard::-webkit-scrollbar-thumb{
+    display: none;
+}
+.foodItemsCard .foodItem{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-height: 190px;
+  /*   border: 1px solid #333; */
+  box-shadow: 5px 5px 10px #bebebe,
+        -5px -5px 10px #fff;
+}
+.foodItemsCard .foodItem img{
+  width: 40%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+
+  
+  
+}
+.foodItemsCard .foodItem .foodInfoItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.foodItemsCard .foodItem .foodInfoItem h5{
+    font-weight: 300;
+    font-size: 2vw;
+}
+.foodItemsCard .foodItem .foodInfoItem h6{
+    font-weight: 300;
+    font-size: 1.3vw;
+}
+.foodItemsCard .foodItem .foodInfoItem p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foodItemsCard .foodItem .foodInfoItem p svg{
+    color: #FF8080;
+    font-size: 1.3em;
+}
+
+.foodItemsCard .foodItem .lastPartFoodItemBelow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 2%;
+}
+.foodItemsCard .foodItem .lastPartFoodItemBelow p{
+    color:#ee3b0e ;
+    font-weight: 400;
+}
+.foodItemsCard .foodItem .lastPartFoodItemBelow button{
+
+    background: #f83909;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 200ms;
+  
+}
+
+.foodItemsCard .foodItem .lastPartFoodItemBelow button:hover{
+  background: #333A73;
+    
+}
+
+
+@media (max-width:600px) {
+    .smallWrapperSearch{
+        grid-template-columns: 100%;
+        
+    }
+    .foodItemsCard .foodItem .lastPartFoodItemBelow button{
+        padding: 5px 32px;
+    }
+    .foodItemsCard .foodItem{
+        flex-direction: column;
+        max-height: 350px;
+    }
+    .foodItemsCard .foodItem img{
+        width: 100%;
+        height: 30%;
+      object-fit: cover;
+    }
+    .foodItemsCard .foodItem .foodInfoItem h5{
+        font-size: 1.2rem;
+    }
+    .foodItemsCard .foodItem .foodInfoItem h6{
+        font-size: 1rem;
+    }
+    .foodItemsCard .foodItem .lastPartFoodItemBelow button{
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,200 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.home .heroImg{
+    width: 100%;
+    height: 70vh;
+}
+.home .heroImg img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.imgCoverCard{
+    width: 80%;
+     background: var(--background);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+ 
+    padding: 3% 0;
+    border-radius: 8px;
+    margin-top: -35px;
+    box-shadow: 0px 7px 8px 0px rgba(0,0,0,0.1);
+}
+.imgCoverCard h2{
+    color: rgb(255, 115, 0);
+    font-weight: 400;
+    font-size: 1.6em;
+}
+.imgCoverCard  p{
+    font-weight: 200;
+}
+.imgCoverCard .searchOption{
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   border: 1px solid #ebe9e9;
+    height: 3em;
+    border-radius: 5em;
+    padding: 0 2%;
+    box-shadow:  5px 5px 10px #c5c5c5,
+    -5px -5px 10px #fbfbfb;
+}
+    
+
+.imgCoverCard .searchOption input{
+    flex: 1 1 40%;
+    color: var(--text);
+    font-weight:200;
+    background: transparent;
+    height: inherit;
+    border: none;
+    outline: none;
+    padding-left: 2%;
+    font-size: .9em;
+}
+
+.imgCoverCard .searchOption .buttons>*{
+    border: none;
+    outline: none;
+    width: 4.5em;
+    height: 2.2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.imgCoverCard .searchOption .buttons button:first-child{
+    background: transparent;
+    color: #444;
+    border:1px solid #ebe9e9;
+    box-shadow: 9px 0px 31px -20px rgba(0,0,0,0.5);
+    transition: 200ms;
+}
+.imgCoverCard .searchOption .buttons button:first-child:hover{
+   border: 1px solid #b4afaf;
+}
+.imgCoverCard .searchOption .buttons button:last-child{
+     background: rgb(255, 115, 0);
+     margin-left: 12px;
+     border: 1px solid #e98323;
+     transition: 150ms;
+}
+.imgCoverCard .searchOption .buttons button:last-child:hover{
+    background: rgb(255, 94, 0);
+}
+@media (max-width: 600px) {
+    
+    .imgCoverCard .searchOption svg{
+        display: none;
+    }
+}
+@media (max-width: 550px) {
+    .imgCoverCard h2{
+        font-size: 1.5em;
+    }
+    
+    .imgCoverCard .searchOption{
+        border: none;
+        height: 5em;
+        padding:  1% 0;
+        height: 80%;
+        box-shadow: none;
+    }
+    .imgCoverCard{
+        height: 300px;
+        margin-top: -100px;
+    }
+    .imgCoverCard .searchOption input{
+          border: 1px solid #ebe9e9;
+          border-radius: 5px;
+          padding:  10px;
+          margin-top: 20px;
+          width: 100%;
+          box-shadow:  5px 5px 10px #c5c5c5,
+             -5px -5px 10px #fbfbfb;
+          
+    }
+
+   .searchOption{
+        flex-direction: column;
+        
+    }
+    .imgCoverCard .searchOption .buttons>*{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      margin-top: 10px;
+       width: 10em;
+       height: 2.9em;
+    }
+    .imgCoverCard .searchOption .buttons button:last-child{
+        margin-left: 0;
+       
+    }
+}
+
+
+.belowHero{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftHero{
+    width: 50%;
+}
+.leftHero img{
+    width: 100%;
+    height: 100%;
+}
+.rightHero{
+    width: 40%;
+}
+.rightHero  img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.rightHero h4{
+    font-weight: 400;
+    font-size: 2em;
+}
+
+
+
+@media (max-width:800px) {
+    .belowHero{
+        flex-direction: column;
+    }
+    .leftHero{
+        width: 100%;
+    }
+    .rightHero{
+        width: 100%;
+    }
+    .rightHero  img{
+        height: 9em;
+    }
+    .rightHero h4{
+        font-size: 4vw;
+    }
+    .rightHero p{
+        font-size: 2.5vw;
+    }
+    .leftHero img{
+        height: 40vh;
+        width: 60%;
+        aspect-ratio: 1;
+    }
+}

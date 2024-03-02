@@ -1,0 +1,227 @@
+.mngResturents{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.clickablesButtons{
+    background: rgba(190, 196, 195, 0.281);
+    padding: 15px;
+    border-radius: 8px;
+}
+.clickablesButtons > button{
+ background: none;
+ border: none;
+ color:#1a0101;
+ margin-left: 5px;
+ 
+ font-size: .9em;
+ padding: 9px 10px;
+ border-radius: 5px;
+ font-weight: 400;
+ transition: 200ms;
+} 
+.clickablesButtons > button:last-child{
+    margin-left: 15px;
+}
+.activeButton {
+    
+ background: #ffffff;
+ box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.3);
+
+ 
+}
+
+/* button section end here */
+.mngWrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #f7f7f7e0;
+    margin-top: 2vh;
+    border-radius: 5px;
+    padding-inline-start: 15px;
+    padding-bottom: 20px;
+}
+.mngWrapper .mngHeading{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.mngWrapper .mngHeading h2{
+    font-weight: 500;
+    font-size: 2em;
+  color: hsl(14, 88%, 56%);
+}
+.mngWrapper .mngHeading p{
+    color: rgba(3, 12, 29, 0.582);
+    font-size: .9em;
+}
+.mngWrapper form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+   padding-right: 3%;
+  
+}
+.mngWrapper form .resNames, .mngWrapper form .delivery,.mngWrapper form .deliveryTime{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mngWrapper form .resNames input{
+ width: 100%;
+
+   
+}
+.mngWrapper form .delivery input,.mngWrapper form .deliveryTime input{
+    width: 48%;
+}
+
+.mngWrapper form .locationOfRes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.mngWrapper form .locationOfRes > *{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+     width: 48%;
+    flex-direction: column;
+}
+.mngWrapper form .locationOfRes > .citys input,.countres input{
+   width: 100%;
+}
+
+
+
+.mngWrapper form input[type="text"]{
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    color: var(--text);
+    height: 2.3em;
+    border-radius: 5px;
+    padding-inline-start: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    transition: 300ms;
+}
+.mngWrapper form input[type="text"]:hover{
+    outline: 2px solid #1b1a1a;
+}
+.mngWrapper form input[type="text"]:focus{
+    outline: 2px solid #9AD0C2;
+}
+.mngWrapper hr{
+    color: #5c5a5a;
+    width: 100%;
+    margin-top: 20px;
+    height: .5px;
+}
+@media (max-width:500px) {
+    .mngWrapper .mngHeading h2{
+        font-size: 1.5em;
+    }
+    .mngWrapper form .delivery input,.mngWrapper form .deliveryTime input{
+        width: 100%;
+    }
+    .mngWrapper form .locationOfRes{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mngWrapper form .locationOfRes > *{
+        width: 100%;
+    }
+}
+.typeOfFood{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+.typeOfFood h2{
+    font-weight: 400;
+    font-size: 2em;
+    color: rgb(231, 121, 31);
+}
+.typeOfFood .inputsCheck{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+.typeOfFood .inputsCheck label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.typeOfFood .inputsCheck label input{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height:15px;
+    border: 1px solid var(--text);
+    background: #fff;
+    border-radius: 3px;
+    transition: 300ms;
+    
+}
+.typeOfFood .inputsCheck label input:checked{
+    background: rgb(241, 68, 16);
+
+    
+    
+}
+
+.ResSub{
+    border: none;
+    background: linear-gradient(20deg,rgb(241, 68, 16),rgb(238, 103, 61));
+    font-size: .9em;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.ResSub:hover{
+    background: linear-gradient(28deg,rgb(248, 66, 11),rgb(228, 64, 15));
+}
+.inputsCheck .popUp{
+    position: absolute;
+    right: 0;
+    top: -100px; 
+    width: 200px;
+    height: 50px;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+    font-size: .9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(101, 134, 101);
+    right: -100vh;
+    transition: 200ms;
+}

@@ -1,0 +1,208 @@
+.navbar{
+    width: 100%;
+   padding: 1.2em 0;
+    position: relative;
+
+  
+}
+.navbar nav{
+    width: 100%;
+   padding: 0 8%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  
+}
+.navbar nav h3{
+ font-size: 1.1em;
+ font-weight: 400;
+ cursor: pointer;
+ transition: 300ms;
+}
+.navbar nav .loginNav h3:hover{
+    color: var(--accent);
+}
+.hideTitle{
+    display: none;
+}
+.hideTitle h1{
+   font-weight: 300;
+   font-size: 1.1em;
+}
+.hideTitle hr{
+    color: black;
+   
+}
+.menu{
+    display: none;
+}
+
+.userInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userInfo h5{
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.userInfo> h5:hover{
+    color: rgba(255, 94, 0, 0.822);
+}
+.userEmail{
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.userEmail h6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userEmail:hover .popHover,.userEmail:focus .popHover{
+    transform: scaleY(1);
+}
+.userEmail .popHover{
+    position: absolute;
+    background: var(--background);
+    height: 200px;
+    width: 200px;
+    left: -30px;
+      bottom: -200px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: scaleY(0);
+      transition: 200ms;
+      z-index: 5;
+}
+.userEmail .popHover h5{
+   
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    transition: 200ms;
+}
+.userEmail .popHover h5:hover,.userEmail .popHover h5:hover:focus{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    color: #FE7A36;
+}
+.userEmail .popHover button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border: none;
+    background: rgb(255, 94, 0);
+    cursor: pointer;
+    font-weight: 100;
+    font-size: .9em;
+    transition: 300ms linear;
+}
+.userEmail .popHover button:hover,.userEmail .popHover button:hover:focus{
+    background: rgb(255, 72, 0);
+}
+.navbarTOcart svg{
+ margin-left: 10px;
+ border-radius: 50%;
+  height: 40px;
+ width: 30px;
+          
+}
+@media (max-width:768px) {
+    .navbarTOcart{
+        background: #F8F8F8;
+        box-shadow:  5px 5px 7px #cbcbcb,
+             -5px -5px 7px #ffffff;
+    }
+    .navbarTOcart svg{
+        margin-left: 0;
+        box-shadow: none;
+        width: 40px;
+        height: 40px;
+   
+    }
+    .menu{
+       display: block;
+    }
+    .loginNav{
+        position: absolute;
+        height: 100vh;
+        background-color: var(--background);
+        width: 250px;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        padding: 0 4%;
+        box-shadow: -7px 7px 6px -8px rgba(0,0,0,0.1);
+       transition: 800ms;
+    }
+    .hideTitle{
+        margin-top: 30px;
+        display: block;
+    }
+    .navbar nav .user h3{
+        background:  rgb(255, 94, 0);
+        padding: 6px 0;
+        margin-top: 13px;
+        color: #fff;
+        border-radius: 8px;
+        transition: 400ms;
+    }
+    .navbar nav .user h3:hover{
+        color: aliceblue;
+        background:rgb(255, 51, 0) ;
+      
+    }
+    .userInfo{
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .userInfo > h5{
+        padding: 5px 10px;
+        border: none;
+        background: rgb(255, 94, 0);
+        cursor: pointer;
+        font-weight: 300;
+        font-size: .9em;
+        color: #fff;
+        width: 100%;
+    }
+    .userInfo > h5:hover{
+        background: rgb(255, 51, 0);
+        color: #fff;
+    }
+    .userEmail h6{
+        display: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .userEmail{
+        margin-left: 0;
+    }
+    .userEmail .popHover{
+        transform: scaleY(1);
+        position: static;
+       
+    }
+    .userEmail .popHover h5{
+        background: #191919;
+        color: white;
+    }
+    .userEmail .popHover h5:hover{
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);;
+    }
+    .userEmail .popHover button{
+        background: #070F2B;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .userEmail .popHover button:hover{
+        background: #1B1A55;
+    }
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root {
+ 
+
+  
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --text: #00060c;
+--background: #F8F8F8;
+--primary: #4584d3;
+--secondary: #f78f77;
+--accent: #fc994f;
+--background3:#FEFBF6;
+--background2:#f6f5fc;
+scroll-behavior: smooth;
+
+}
+html{
+  scroll-behavior: smooth;
+}
+.cartICons{
+  /* box-shadow: 0px 10px 16px -6px rgba(0,0,0,0.4); */
+}
+.wrapCart svg{
+  
+
+  fill: orangered;
+  transition: 200ms;
+  cursor: pointer;
+  box-shadow:  5px 5px 10px #c5c5c5,
+            -5px -5px 10px #fbfbfb;
+}
+.wrapCart svg:hover, .wrapCart svg:focus{
+   transform: scale(1.1);
+}
