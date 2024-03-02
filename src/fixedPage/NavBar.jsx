@@ -34,7 +34,7 @@ const NavBar = () => {
   },[screenSize])
   const handelLogOut = async ()=>{
      try{
-      const {data} = await axios.get('http://localhost:4000/user/logout',{
+      const {data} = await axios.get(`${BaseURl}/user/logout`,{
         withCredentials:true
       })
        if(data.logOut ===321){
