@@ -23,28 +23,34 @@ const Login = () => {
     password:password
   }
    
-    const handelLogin = async ()=>{
-      
-      if(isRemember){
-        localStorage.setItem('userInfo',JSON.stringify(user))
-      }
-       try{
-              const {data} = await axios.post(`${baseUrl}/user/signIn`,user,{
-                withCredentials:true
-              })
-             
-              sessionStorage.setItem('userMail',data.userMail)
-              if(data.userMail && data.accessToken){
-               location.replace(homePage)
-              }
-        
-        }catch(error){
-          console.log(error)
-        
+   const handleLogin = async () => {
+  if (isRemember) {
+    localStorage.setItem('userInfo', JSON.stringify(user));
+  }
 
-        }
-    
+  try {
+    const response = await fetch(`${baseUrl}/user/signIn`, {
+      method: 'POST',
+      body: JSON.stringify(user),
+      credentials: 'include' // Equivalent to `withCredentials: true`
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
     }
+
+    const data = await response.json();
+
+    sessionStorage.setItem('userMail', data.userMail);
+
+    if (data.userMail && data.accessToken) {
+      location.replace(homePage);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
   return (
     <div className='login'>
        <div className="seperateLogin">
