@@ -10,12 +10,13 @@ const Cart = () => {
      const [cartData,setCartData] = useState([])
      const [noItems,setNoitems] = useState(false)
      const navigate = useNavigate()
+     const token = sessionStorage.getItem('refresh_token')
     useEffect(()=>{
 
         if(access !==-1){
             const fetchData = async ()=>{
                 try{
-                  const {data} = await axios.get(`${baseUrl}/cart`,{
+                  const {data} = await axios.get(`${baseUrl}/cart?token=${token}`,{
                     withCredentials:true
                   })
                   setCartData(data)
@@ -42,7 +43,7 @@ const Cart = () => {
         ...prev,cartFood:newArray,total:total
       }))
      try{
-       const {data} = await axios.delete(`${baseUrl}/cart/${id}`,{
+       const {data} = await axios.delete(`${baseUrl}/cart/${id}?token=${token}`,{
         withCredentials:true
        })
        console.log(data)

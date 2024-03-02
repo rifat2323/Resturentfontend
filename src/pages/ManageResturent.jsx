@@ -19,11 +19,11 @@ const[isOrderClick,SetIsOrderClik] = useState(true)
 
 const [ResData,setResData] = useState([])
 const [order,setOrder]= useState([])
-
+const token = sessionStorage.getItem('refresh_token')
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-       const {data} = await axios.get(`${baseUrl}/restaurant`,{
+       const {data} = await axios.get(`${baseUrl}/restaurant?token=${token}`,{
          withCredentials:true
        })
        setResData(data)
@@ -49,7 +49,7 @@ const [order,setOrder]= useState([])
    setInputs(newArray)
 
    try{
-      const data = await axios.put(`${baseUrl}/food/inputChange`,{
+      const data = await axios.put(`${baseUrl}/food/inputChange?token =${token}`,{
         foodName:e.target.value,
         id:id
       },{
@@ -74,7 +74,7 @@ const [order,setOrder]= useState([])
 setInputs(newArray)
 
 try{
-  const data = await axios.put(`${baseUrl}/food/inputPrice`,{
+  const data = await axios.put(`${baseUrl}/food/inputPrice?token=${token}`,{
     Price:e.target.value,
     id:id
   },{
@@ -91,7 +91,7 @@ console.log(error)
    setInputs(newArray)
 
    try{
-    const data = await axios.delete(`${baseUrl}/food/delete?id=${id}`,{
+    const data = await axios.delete(`${baseUrl}/food/delete?id=${id}&token=${token}`,{
       withCredentials:true
     })
     
@@ -120,7 +120,7 @@ console.log(error)
  }
   const handelSaveInfo = async ()=>{
    try{
-     const data = await axios.put(`${baseUrl}/restaurant/saveInfo`,{
+     const data = await axios.put(`${baseUrl}/restaurant/saveInfo?token=${token}`,{
       ResArray:ResData
      },{
       withCredentials:true
@@ -140,7 +140,7 @@ console.log(error)
  useEffect(()=>{
    const fetchItems = async()=>{
     try{
-      const {data} = await axios.get(`${baseUrl}/food/reswoner`,{
+      const {data} = await axios.get(`${baseUrl}/food/reswoner?token=${token}`,{
         withCredentials:true
       })
       setInputs(data)
@@ -156,7 +156,7 @@ console.log(error)
  useEffect(()=>{
   const fetchOrder = async ()=>{
       try{
-       const {data} = await axios.get(`${baseUrl}/checkOut/adminGet`,{
+       const {data} = await axios.get(`${baseUrl}/checkOut/adminGet?token=${token}`,{
         withCredentials:true
        })
       /*  console.log(data) */
@@ -175,7 +175,7 @@ console.log(error)
  },[baseUrl])
  const handelStausChnages = async (value,id)=>{
    try{
-     const {data} = await axios.post(`${baseUrl}/checkOut/changeStatus`,{
+     const {data} = await axios.post(`${baseUrl}/checkOut/changeStatus?token=${token}`,{
       value,
       id
      },

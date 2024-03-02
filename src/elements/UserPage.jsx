@@ -13,11 +13,12 @@ const UserPage = () => {
     const [address, setAddress] = useState('')
     const [isLoading,setIsLoading] = useState(false)
     const [toster, setToser] = useState(false)
+    const token = sessionStorage.getItem('refresh_token')
      useEffect(()=>{
         const getUser = async ()=>{
          
             try{
-                const {data} = await axios.get(`${baseUrl}/user/singleUser`,{
+                const {data} = await axios.get(`${baseUrl}/user/singleUser?token=${token}`,{
                     withCredentials:true
                 })
                 setEmail(data.email)
@@ -47,7 +48,7 @@ const UserPage = () => {
        
         setToser(false)
         try{
-            const data = await axios.put(`${baseUrl}/user/updateUser`,newUpdateUser,{
+            const data = await axios.put(`${baseUrl}/user/updateUser?token=${token}`,newUpdateUser,{
                 withCredentials:true
             })
             console.log(data)
