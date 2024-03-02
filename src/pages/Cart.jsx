@@ -13,7 +13,7 @@ const Cart = () => {
      const token = sessionStorage.getItem('refresh_token')
     useEffect(()=>{
 
-        if(access !==-1){
+       
             const fetchData = async ()=>{
                 try{
                   const {data} = await axios.get(`${baseUrl}/cart?token=${token}`,{
@@ -31,7 +31,7 @@ const Cart = () => {
                 }
               }
               fetchData()
-        }
+     
       
     },[])
   
