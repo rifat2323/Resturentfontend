@@ -23,7 +23,7 @@ const Login = () => {
     password:password
   }
    
-   const handleLogin = async () => {
+   const handelLogin = async () => {
   if (isRemember) {
     localStorage.setItem('userInfo', JSON.stringify(user));
   }
