@@ -216,7 +216,7 @@ console.log(error)
                   {
                     unauthorze?(
                       <div style={{
-                        color:"ActiveCaption",
+                        color:"#222",
                         fontSize:"3vw"
                       }}>You are not authorized to see orders.</div>
                     ):(
